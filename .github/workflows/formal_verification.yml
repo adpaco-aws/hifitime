@@ -33,9 +33,6 @@ jobs:
 
       - name: Run Kani with and without reports
         run: |
-          # Remove `cdylib` from targets in Cargo.toml because it confuses Kani
-          sed '17d' Cargo.toml > Cargo.toml.new
-          mv Cargo.toml.new Cargo.toml
           cargo kani
 
       - name: Save formal verification artifacts
